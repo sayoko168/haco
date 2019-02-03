@@ -1,3 +1,297 @@
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Nunito+Sans:900');
+
+
+// 基本設定
+
+// --------------
+// メディアクエリ
+// --------------
+
+pc()
+  @media screen and (min-width: 768px)
+    {block}
+
+sp()
+  @media screen and (max-width: 767px)
+    {block}
+
+// --------------
+// mixin
+// --------------
+
+per(num)
+  num *100%
+
+
+
+html
+  font-family 'Nunito Sans','Noto Sans JP', sans-serif
+
+html,body
+  margin 0
+  padding 0
+
+img
+  width 100%
+  display block
+
+ul
+  padding 0
+  margin 0
+  list-style none
+
+.section-inner
+  margin 0 auto
+  +pc()
+    width 1100px
+  +sp()
+    width per(628/750)
+
+.section-title
+  color #ffffff
+  background-color #000000
+  letter-spacing 0.1em
+  text-align center
+  +pc()
+    width 275px
+    font-size 28px
+    line-height 90px
+    margin 0 0 0 275px
+    display: inline-block
+  +sp()
+    font-size 16px
+    width (140/16)em
+    margin 0 auto
+    line-height (40/16)em
+
+
+header
+  background-color #000000
+  position fixed
+  top 0
+  left 0
+  width 100%
+  z-index 50
+  +pc()
+    height 70px
+  .section-inner
+    display flex
+    justify-content space-between
+    align-content stretch
+    align-items center
+    height 100%
+  .title
+    +pc()
+      width 70px
+      margin 0
+  ul
+    display flex
+    li
+      &:not(:first-of-type)
+        +pc()
+          margin-left 10px
+      a
+        display block
+        text-decoration none
+        &:link
+          color #ffffff
+        &:visited
+          color #ffffff
+
+.mv
+  background-color #000000
+  height 400px
+
 .about
-  h2
-    color blue
+  +pc()
+    padding-bottom 70px
+  +sp()
+    padding-bottom (140/628)
+  &__image
+    font-size 14px
+    text-align center
+    +pc()
+      margin-top 110px
+    +sp()
+      margin-top per(160/628)
+    img
+      display block
+      margin 0 auto
+      +pc()
+        width 150px
+      +sp()
+        width per(300/628)
+
+  &__text
+    line-height 2
+    text-align center
+    +pc()
+      font-size 18px
+    +sp()
+      font-size 16px
+
+
+.profile
+  +pc()
+    padding-bottom 174px
+  +sp()
+    padding-bottom per(120/750)
+  &-box
+    +pc()
+      width 864px
+      display flex
+      justify-content space-between
+      margin 140px auto 0
+    +sp()
+      margin per(170/628) auto 0
+
+    &__item
+      +pc()
+        width 280px
+      +sp()
+        width per(560/628)
+        margin 0 auto
+      &:last-of-type
+        +sp()
+          margin-top per(90/560)
+        
+    
+  .item
+
+    &-image
+      margin 0 auto
+      +pc()
+        width 200px
+      +sp()
+        width per(400/560)
+    &-name
+      display flex
+      justify-content center
+      +pc()
+        margin 35px auto 0
+        font-size 24px
+      +sp()
+        margin per(35/560) auto 0
+        font-size 28px
+      span
+        +pc()
+          line-height 40px
+          display block
+        &:last-of-type
+          letter-spacing 0.1em
+      .text-black
+        color #ffffff
+        background-color #000000
+        width 40px
+        text-align center
+        margin-right 5px
+
+    &-detail
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      align-items flex-start
+      +pc()
+        margin-top 57px
+      +sp()
+        margin-top per(100/560)
+
+      &:nth-of-type(n+2)
+        +pc()
+          margin-top 20px
+      dt
+        color #ffffff
+        background-color #000000
+        // display inline-block
+        padding 0 0.5em
+        font-size 18px
+        letter-spacing 0.1em
+        +pc()
+          line-height 30px
+
+      dd
+        margin 0
+        font-size 16px
+        +pc()
+          width 180px
+          line-height 30px
+        +sp()
+          width per(340/560)
+
+.product
+  +pc()
+    padding-bottom 184px
+  +sp()
+    padding-bottom per(100/750)
+  &-inner
+    display flex
+    flex-wrap wrap
+    +pc()
+      margin-top 45px
+    +sp()
+      margin-top per(100/628)
+      justify-content space-between
+  
+  .article-box
+    position relative
+    border 1px solid #000000
+    height 200px
+    box-sizing border-box
+    &:hover
+      .article-box__inner
+        opacity 1
+    .article-box__inner
+        opacity 0
+        transition opacity 0.6s
+        position absolute
+        height 100%
+        width 100%
+        top 0
+        left 0
+        text-align center
+        background-color rgba(255,255,255,0.8)
+
+    &--small
+      background url(https://placehold.jp/2000x200.png) no-repeat center center
+      +pc()
+        width 200px
+      +sp()
+        width per(300/628)
+        height 0
+        padding-top per(300/628)
+    &--large
+      background url(https://placehold.jp/530x200.png) no-repeat center center
+      background-size covar
+      +pc()
+        width 530px
+      +sp()
+        width 100%
+        
+    
+    &--new
+      &:after
+        position absolute
+        content "NEW"
+        display block
+        top 0
+        left 0
+        background-color #000000
+    
+    &:not(:nth-of-type(3n+1))
+      +pc()
+        margin-left 20px
+    &:nth-of-type(n+4)
+      +pc()
+        margin-top 20px
+    &:nth-of-type(n+2)
+      +sp()
+        margin-top per(40/628)
+    
+
+footer
+  background-color #000000
+  color #ffffff
+  text-align center
+  small
+    line-height 70px

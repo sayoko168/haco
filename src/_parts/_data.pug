@@ -1,0 +1,55 @@
+
+//- var
+
+-
+  var productArray = [
+      {
+          title: "クトゥルフ神話TRPGリプレイ動画「悪霊の家」",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "large"
+      },
+       {
+          title: "年賀状",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "small"
+      },
+       {
+          title: "年賀状",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "small"
+      },
+       {
+          title: "年賀状",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "small"
+      },
+       {
+          title: "年賀状",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "small"
+      },
+      {
+          title: "クトゥルフ神話TRPGリプレイ動画「悪霊の家」",
+          date: "2016.10.26",
+          author: "HACCHI COBATO",
+          size: "large"
+      }
+  ];
+
+
+.product-inner
+  each val in productArray
+    article(class="article-box article-box--" + val.size)
+      .article-box__inner
+        .article-title
+          |#{val.title}
+        .article-footer
+          .article-date
+            |#{val.date}          
+          .article-author
+            |#{val.author} 

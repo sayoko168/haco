@@ -2,17 +2,88 @@ doctype html
 html(lang='ja')
     head
         meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
         title Haco
-        link(href="/commmon/css/style.css", rel="stylesheet")
+        link(href="/common/css/stylus.css", rel="stylesheet")
     body
       header
-        ul
-          li: a(href="#") about
-          li: a(href="#") profile
-          li: a(href="#") product
-          li: a(href="#") record
+        .section-inner
+          h1.title
+            img(src="./common/img/logo.png", alt="HACO")
+          ul
+            li: a(href="#") about
+            li: a(href="#") profile
+            li: a(href="#") product
+            li: a(href="#") record
       section.mv
+        .section-inner
       section.about
-        h2 HACO.project
-        p
-          |ダミーテキスト～！
+        .section-inner
+          h2.section-title
+            |ABOUT
+          .about__image
+            img(src="https://placehold.jp/300x178.png", alt="HACO.project")
+            span
+              |HACO.projectとは？
+          p.about__text
+            |箱に外身と中身があるように
+            br
+            |外身を作りたいHacchiと
+            br
+            |中身を表現したいcobatoの
+            br
+            |ユニット
+      section.profile
+        .section-inner
+          h2.section-title
+            |PROFILE
+          ul.profile-box
+            li.profile-box__item
+              .item-image
+                img(src="https://placehold.jp/400x400.png", alt="HACCHI")
+              .item-name
+                span.text-black
+                  |H
+                span.text-black
+                  |A
+                span
+                  |CCHI
+              dl.item-detail
+                dt
+                  |LIKE
+                dd
+                  |和物
+              dl.item-detail
+                dt
+                  |HOBBY
+                dd
+                  |クトゥルフ神話TRPG
+            li.profile-box__item
+              .item-image
+                img(src="https://placehold.jp/400x400.png", alt="HACCHI")
+              .item-name
+                span.text-black
+                  |C
+                span.text-black
+                  |O
+                span
+                  |BATO
+              dl.item-detail
+                dt
+                  |LIKE
+                dd
+                  |和物
+              dl.item-detail
+                dt
+                  |HOBBY
+                dd
+                  |クトゥルフ神話TRPG
+      section.product
+        .section-inner
+          h2.section-title
+            |PRODUCT
+          include _parts/_data
+      
+      footer
+        small
+          |&copy;HACO.project
